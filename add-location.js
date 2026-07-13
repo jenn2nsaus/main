@@ -48,7 +48,7 @@ function geocode(query) {
     headers: {
       // Nominatim's usage policy requires a real identifying User-Agent.
       // Replace the email below with a real contact address.
-      'User-Agent': 'trick-or-treat-map (community project; contact: you@example.com)',
+      'User-Agent': 'trick-or-treat-map (community project; contact: jenn2nsaus@gmail.com)',
     },
   };
 
