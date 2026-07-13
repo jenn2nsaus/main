@@ -1,4 +1,4 @@
-# Trick-or-Treat Map — Central Coast, NSW
+# Trick-or-Treat Map
 
 A static map that plots participating houses from the [registration form](https://rcdnplx5.paperform.co/).
 Hosted on GitHub Pages. New pins are added by a GitHub Action, triggered by Stepper.
