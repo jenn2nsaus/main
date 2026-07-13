@@ -1,8 +1,8 @@
 name: Add Trick-or-Treat Location
 
-# Triggered by Stepper sending a POST to:
+# Triggered by Stepper's "Code" step sending a POST to:
 #   https://api.github.com/repos/<owner>/<repo>/dispatches
-#   { "event_type": "new-location", "client_payload": { "name": ..., "address": ..., "notes": ... } }
+#   { "event_type": "new-location", "client_payload": { "name": ..., "address": ..., ... } }
 on:
   repository_dispatch:
     types: [new-location]
@@ -30,7 +30,6 @@ jobs:
           LOCATION_TREATS: ${{ github.event.client_payload.treats }}
           LOCATION_ALLERGENS: ${{ github.event.client_payload.allergens }}
           LOCATION_DESCRIPTION: ${{ github.event.client_payload.description }}
-          LOCATION_PHOTO: ${{ github.event.client_payload.photo }}
         run: node scripts/add-location.js
 
       - name: Commit and push
@@ -38,7 +37,7 @@ jobs:
           git config user.name "trick-or-treat-bot"
           git config user.email "actions@github.com"
           git add data/locations.json
-          git commit -m "Add location: ${{ github.event.client_payload.name }}" || echo "Nothing to commit"
+          git commit -m "Add a new trick-or-treat location" || echo "Nothing to commit"
           for i in 1 2 3; do
             git pull --rebase && git push && break
             echo "Push attempt $i failed, retrying..."
