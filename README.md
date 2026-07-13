@@ -14,49 +14,7 @@ Hosted on GitHub Pages. New pins are added by a GitHub Action, triggered by Step
 
 Nothing runs on a server you have to maintain — it's all GitHub Pages + GitHub Actions.
 
-## Set up the repo
-
-1. Create a new **public** GitHub repo and push these files to it.
-   (Public is required for the free Nominatim geocoding call to work smoothly and for
-   GitHub Pages on a free plan; the data being published — house address + a note — is
-   exactly what people are opting in to share by registering.)
-2. In **Settings → Pages**, set source to "Deploy from a branch," branch `main`, folder `/(root)`.
-   Your map will be live at `https://<your-username>.github.io/<repo-name>/`.
-3. Open `scripts/add-location.js` and replace `you@example.com` in the `User-Agent` string
-   with a real contact address — Nominatim's usage policy requires this.
-
-## Connect Stepper
-
-Stepper needs to send **one HTTP request** per form submission:
-
-```
-POST https://api.github.com/repos/<owner>/<repo>/dispatches
-Headers:
-  Authorization: Bearer <your GitHub token>
-  Accept: application/vnd.github+json
-  Content-Type: application/json
-Body:
-{
-  "event_type": "new-location",
-  "client_payload": {
-    "name": "<value of field 9rrvm — Map Location Name>",
-    "address": "<value of field home_address — Physical address>",
-    "hours": "<value of field 48c0u — Hours of Operation>",
-    "treats": "<value of field candy_types — Treats>",
-    "allergens": "<value of field 3ag98 — Allergens badges, comma-separated e.g. \"GF, DF\">",
-    "description": "<value of field special_notes — Description of location>",
-    "photo": "<value of field decoration_photo — Photo of location, as a URL>"
-  }
-}
-```
-
-**Getting a token:** create a GitHub Personal Access Token scoped to just this repo
-(fine-grained token → Contents: Read and write, Metadata: Read-only), and paste it into
-Stepper's request header yourself. Don't share this token or put it in any file that
-gets committed.
-
-**Field mapping cheat sheet** (Paperform field → `client_payload` key):
-
+## Fieldmapping Cheat sheet
 | Paperform field | Paperform slug | client_payload key |
 |---|---|---|
 | Map Location Name | `9rrvm` | `name` |
