@@ -100,24 +100,36 @@ main {
   background: var(--night);
 }
 
-/* Leaflet overrides so tiles + popups fit the night theme */
-.leaflet-container {
-  background: var(--night);
+/* MapLibre overrides so the map + popups fit the night theme */
+.maplibregl-map {
   font-family: var(--font-body);
 }
 
-.leaflet-popup-content-wrapper {
+.maplibregl-popup-content {
   background: var(--night-soft);
   color: var(--fog);
   border-radius: 10px;
   border: 1px solid rgba(245, 230, 168, 0.15);
+  padding: 14px 16px;
 }
 
-.leaflet-popup-tip {
-  background: var(--night-soft);
+.maplibregl-popup-tip {
+  border-top-color: var(--night-soft) !important;
+  border-bottom-color: var(--night-soft) !important;
 }
 
-.leaflet-popup-content h3 {
+.maplibregl-popup-close-button {
+  color: var(--fog-dim);
+  font-size: 18px;
+  padding: 2px 8px;
+}
+
+.maplibregl-popup-close-button:hover {
+  color: var(--fog);
+  background: transparent;
+}
+
+.maplibregl-popup-content h3 {
   font-family: var(--font-display);
   font-style: italic;
   margin: 0 0 6px;
@@ -125,22 +137,22 @@ main {
   font-size: 1.05rem;
 }
 
-.leaflet-popup-content p {
+.maplibregl-popup-content p {
   margin: 4px 0;
   font-size: 0.88rem;
   line-height: 1.4;
 }
 
-.leaflet-popup-content .popup-address {
+.maplibregl-popup-content .popup-address {
   color: var(--fog-dim);
 }
 
-.leaflet-popup-content .popup-hours,
-.leaflet-popup-content .popup-treats {
+.maplibregl-popup-content .popup-hours,
+.maplibregl-popup-content .popup-treats {
   color: var(--fog);
 }
 
-.leaflet-popup-content .popup-description {
+.maplibregl-popup-content .popup-description {
   color: var(--fog);
   font-style: italic;
 }
@@ -178,9 +190,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 26px;
+  cursor: pointer;
   filter: drop-shadow(0 0 6px var(--pumpkin-glow));
-  transform: translateY(2px);
+  transition: transform 0.15s ease;
+}
+
+.pumpkin-marker:hover {
+  transform: scale(1.2) rotate(-6deg);
 }
 
 .empty-state {
