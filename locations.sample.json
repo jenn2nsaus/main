@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sample-1",
+    "name": "The Nguyen Family",
+    "address": "14 Ocean View Dr, Terrigal NSW",
+    "hours": "6:00 PM – 8:30 PM",
+    "treats": "Full-size chocolate bars, lollipops",
+    "allergens": ["GF", "DF"],
+    "description": "Look for the giant inflatable pumpkin on the front lawn.",
+    "photo": "https://picsum.photos/seed/trick-or-treat-1/400/300",
+    "lat": -33.4501,
+    "lng": 151.4415,
+    "submittedAt": "2026-10-20T09:00:00Z"
+  },
+  {
+    "id": "sample-2",
+    "name": "Avoca Beach Crew",
+    "address": "8 Avoca Dr, Avoca Beach NSW",
+    "hours": "5:30 PM – 8:00 PM",
+    "treats": "Mixed lollies, glow sticks",
+    "allergens": ["NF"],
+    "description": "",
+    "photo": "",
+    "lat": -33.4667,
+    "lng": 151.4333,
+    "submittedAt": "2026-10-20T09:05:00Z"
+  },
+  {
+    "id": "sample-3",
+    "name": "The Petersens",
+    "address": "3 Bulbararing St, Woy Woy NSW",
+    "hours": "6:00 PM – 9:00 PM",
+    "treats": "Chips, chocolate freddos",
+    "allergens": [],
+    "description": "Spooky sound effects playing on the porch, little ones be warned.",
+    "photo": "https://picsum.photos/seed/trick-or-treat-3/400/300",
+    "lat": -33.4926,
+    "lng": 151.3183,
+    "submittedAt": "2026-10-20T09:10:00Z"
+  }
+]

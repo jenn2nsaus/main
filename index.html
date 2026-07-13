@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="style.css" rel="stylesheet" />
-    <title>Pottery Resources</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trick-or-Treat Map — Central Coast, NSW</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- Left Menu -->
-    <div class="menu">
-        <h2>Pottery Sites</h2>
-        <a href="https://www.potterybarn.com" target="_blank">Pottery Barn</a>
-        <a href="https://www.potteryexpress.com.au" target="_blank">Pottery Express</a>
-        <a href="https://www.mudsharkpottery.com" target="_blank">Mud Shark Pottery</a>
-        <a href="https://www.potterystudio.com" target="_blank">Pottery Studio</a>
-        <a href="https://www.potteryinternational.com" target="_blank">Pottery International</a>
+  <header class="site-header">
+    <div class="title-block">
+      <h1>🎃 Trick-or-Treat Map</h1>
+      <p class="subtitle">Central Coast, NSW</p>
     </div>
+    <div class="header-actions">
+      <span id="house-count" class="house-count">Loading houses…</span>
+      <a class="register-link" href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener">
+        Register your house
+      </a>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <div data-paperform-id="FORMIDHERE" class="main-content"></div><script>(function() {var script = document.createElement('script'); script.src = "https://paperform.co/__embed.min.js"; document.body.appendChild(script); })()</script>
-    <p>Hello,</p>
-    <p>This section is the main content.  There's not much here yet, but it is where I'll put some stuff from time-to-time, for experiments (embeds, videos, images, etc.)</p>
-</div>
+  <main>
+    <div id="map"></div>
+    <div id="empty-state" class="empty-state hidden">
+      <p><strong>No houses registered yet.</strong></p>
+      <p>Be the first on the map — <a href="https://rcdnplx5.paperform.co/" target="_blank" rel="noopener">register your house</a>.</p>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
