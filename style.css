@@ -214,13 +214,13 @@ main {
 }
 
 .pumpkin-marker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
+  font-size: 42px;
   cursor: pointer;
-  filter: drop-shadow(0 0 6px var(--pumpkin-glow));
-  transition: transform 0.15s ease;
+  transition: .25s;
+  filter: 
+    drop-shaodw (0 0 5px #ff8c00)
+    drop-shadow (0 0 12px #ff8c00)
+    drop-shadow (0 0 24px #ff6200);
 }
 
 .pumpkin-marker:hover {
