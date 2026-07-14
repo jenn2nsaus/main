@@ -51,5 +51,20 @@
     "lat": -33.5126463,
     "lng": 151.330649,
     "submittedAt": "2026-07-14T04:38:09.451Z"
+  },
+  {
+    "id": "mrk5x2ksz3g5",
+    "name": "Pool Hall Test 2",
+    "address": "243 Blackwall Road, Woy Woy, New South Wales, 2256, Australia",
+    "hours": "6:00 PM - 9:00 PM",
+    "treats": "Full-size candy bars,Lollipops or hard candy,Non-chocolate candy",
+    "allergens": [
+      "DF",
+      "NF"
+    ],
+    "description": "",
+    "lat": -33.4966778,
+    "lng": 151.327856,
+    "submittedAt": "2026-07-14T04:39:57.772Z"
   }
 ]
