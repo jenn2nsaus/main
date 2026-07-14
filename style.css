@@ -33,6 +33,13 @@ body {
   flex-direction: column;
 }
 
+#map canvas {
+filter: 
+  brightness(.62)
+  contrast(1.15)
+  saturate(.65);
+}
+
 .site-header {
   display: flex;
   align-items: center;
