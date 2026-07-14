@@ -24,6 +24,7 @@ jobs:
 
       - name: Geocode address and update locations.json
         env:
+          LOCATIONIQ_KEY: ${{ secrets.LOCATIONIQ_KEY }}
           LOCATION_NAME: ${{ github.event.client_payload.name }}
           LOCATION_ADDRESS: ${{ github.event.client_payload.address }}
           LOCATION_HOURS: ${{ github.event.client_payload.hours }}
