@@ -1,8 +1,8 @@
 // Runs inside the GitHub Action. Reads the submitted fields from
 // client_payload (a real nested object this time — sent by a Stepper
 // "Code" step using fetch() + JSON.stringify(), not the flat HTTP Request
-// body editor), geocodes the address with OpenStreetMap's free Nominatim
-// service, and appends the new pin to data/locations.json.
+// body editor), geocodes the address with LocationIQ, and appends the new
+// pin to data/locations.json.
 
 const fs = require('fs');
 const path = require('path');
@@ -33,8 +33,21 @@ if (!address) {
   process.exit(1);
 }
 
+// Nominatim (OpenStreetMap's free geocoder) explicitly prohibits automated/CI
+// use, and blocks shared cloud IP ranges like GitHub Actions runners — which
+// is why this was failing with "Access denied" regardless of the address.
+// LocationIQ's free tier (5,000 requests/day) is built for exactly this kind
+// of automated use, and mirrors Nominatim's request/response format closely.
+const LOCATIONIQ_KEY = process.env.LOCATIONIQ_KEY;
+
+if (!LOCATIONIQ_KEY) {
+  console.error('LOCATIONIQ_KEY is not set. Add it as a repository secret.');
+  process.exit(1);
+}
+
 function geocode(query) {
   const params = new URLSearchParams({
+    key: LOCATIONIQ_KEY,
     q: query,
     format: 'json',
     limit: '1',
@@ -43,11 +56,9 @@ function geocode(query) {
   });
 
   const options = {
-    hostname: 'nominatim.openstreetmap.org',
-    path: `/search?${params.toString()}`,
+    hostname: 'us1.locationiq.com',
+    path: `/v1/search?${params.toString()}`,
     headers: {
-      // Nominatim's usage policy requires a real identifying User-Agent.
-      // Replace the email below with a real contact address.
       'User-Agent': 'trick-or-treat-map (community project; contact: you@example.com)',
     },
   };
@@ -58,10 +69,16 @@ function geocode(query) {
         let body = '';
         res.on('data', (chunk) => (body += chunk));
         res.on('end', () => {
+          if (res.statusCode !== 200) {
+            console.error(`Geocoding request failed with status ${res.statusCode}:`, body.slice(0, 300));
+            resolve([]);
+            return;
+          }
           try {
             resolve(JSON.parse(body));
           } catch (err) {
-            reject(err);
+            console.error('Geocoding response was not valid JSON:', body.slice(0, 300));
+            resolve([]);
           }
         });
       })
