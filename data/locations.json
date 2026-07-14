@@ -93,5 +93,17 @@
     "lat": -33.5217796,
     "lng": 151.3204287,
     "submittedAt": "2026-07-14T05:05:44.904Z"
+  },
+  {
+    "id": "mrkaj7yvwg04",
+    "name": "Google Maps API Test",
+    "address": "52 Barrenjoey Road, Ettalong Beach, New South Wales, 2257, Australia",
+    "hours": "",
+    "treats": "",
+    "allergens": [],
+    "description": "",
+    "lat": -33.5126463,
+    "lng": 151.330649,
+    "submittedAt": "2026-07-14T06:49:09.655Z"
   }
 ]
