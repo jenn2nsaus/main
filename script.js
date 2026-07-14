@@ -137,7 +137,7 @@ const ALLERGEN_LABELS = {
   NF: 'Nut Free',
   EF: 'Egg Free',
   SF: 'Soy Free',
-  YF: 'Yeast Free',
+  YF: 'Dye Free',
 };
 
 function renderAllergenLegend(locations) {
