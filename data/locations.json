@@ -78,5 +78,20 @@
     "lat": -33.5126463,
     "lng": 151.330649,
     "submittedAt": "2026-07-14T04:58:18.175Z"
+  },
+  {
+    "id": "mrk6u8coizds",
+    "name": "West St TrickandTreat",
+    "address": "274 West Street, Umina Beach, New South Wales, 2257, Australia",
+    "hours": "5:00 PM - 9:00 PM",
+    "treats": "Chocolate candy,Lollipops or hard candy,Gummy candy,Full-size candy bars",
+    "allergens": [
+      "DF",
+      "YF"
+    ],
+    "description": "Come on down to 274 West where the party is happenin'!  We got pumpkins, air fried pumpkin seeds, pumpkin pie, all things pumpkin, Pumpkin!",
+    "lat": -33.5217796,
+    "lng": 151.3204287,
+    "submittedAt": "2026-07-14T05:05:44.904Z"
   }
 ]
