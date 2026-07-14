@@ -1,0 +1,550 @@
+{
+  "schema": {
+    "version": "v1",
+    "nodes": [
+      {
+        "id": "trigger-1",
+        "type": "trigger",
+        "data": {
+          "app_version_id": "paperform-1",
+          "label": "When Halloween registration form is submitted",
+          "trigger": "new-submission",
+          "type": "webhook",
+          "example": {
+            "response": {
+              "id": "6a54361f67a82de8a00536a2",
+              "48c0u": "5:00 PM - 9:00 PM",
+              "email": "jennifer+testhalloweenform@paperform.co",
+              "phone": "+615 55 555 555",
+              "device": {
+                "url": "https://rcdnplx5.paperform.co/",
+                "type": "desktop",
+                "device": "Macintosh",
+                "browser": "Chrome",
+                "embedded": false,
+                "platform": "OS X",
+                "utm_term": null,
+                "ip_address": "119.18.3.42",
+                "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+                "utm_medium": null,
+                "utm_source": null,
+                "utm_content": null,
+                "utm_campaign": null
+              },
+              "_charge": {
+                "tax": 0,
+                "total": 0,
+                "coupon": false,
+                "summary": "",
+                "discount": 0,
+                "products": [],
+                "authorize": null,
+                "total_cents": 0,
+                "receipt_email": false,
+                "processing_fee": 0,
+                "tax_percentage": 0,
+                "discounted_subscriptions": []
+              },
+              "last_name": "Homeowner",
+              "volunteer": "No",
+              "created_at": "13-07-2026 10:49:35",
+              "first_name": "Test",
+              "ip_address": "119.18.3.42",
+              "48c0u_title": "Hours of Operation",
+              "candy_types": [
+                "Full-size candy bars",
+                "Chips or savory snacks",
+                "Allergy-friendly treats"
+              ],
+              "decorations": [
+                "Elaborate decorations",
+                "Photo opportunity area",
+                "Special effects (fog, lights, sound)"
+              ],
+              "email_title": "Email Address",
+              "phone_title": "Phone Number",
+              "scary_level": "3",
+              "home_address": "123 Test St, Test Suburb, Test State, Australia",
+              "accessibility": [
+                "Wheelchair accessible entrance",
+                "Well-lit pathway",
+                "No stairs required"
+              ],
+              "participating": "Yes",
+              "special_notes": "Come one, come all to the frightening extravaganza that is my house.  Prepare to karaoke if you have the time and do a cartwheel if you feel like it.  There will be a dance floor and a DJ booth as well with music provided by the fabulous local DJ DJontheCoast4Sheezy.",
+              "created_at_utc": "2026-07-13T00:49:35+00:00",
+              "map_permission": "Yes",
+              "allergy_details": "gluten free, dairy free, nut free",
+              "last_name_title": "Last Name",
+              "volunteer_title": "Would you like to volunteer to help coordinate Halloween activities?",
+              "allergy_friendly": "Yes",
+              "decoration_photo": {
+                "url": "https://paperform.co/file/s3.amazonaws.com/pf-user-files-01/t-351533/uploads/2026-07-13/qp03380/Background%20for%20Form.jpg?expires=1784508886&signature=e26fe6921a2130cb3c28a805f318755deef9004dc9761add2482c96db0337ef8",
+                "name": "Background for Form.jpg",
+                "size": 3208389,
+                "type": "image/jpeg",
+                "width": 2048,
+                "height": 2048
+              },
+              "first_name_title": "First Name",
+              "candy_types_title": "What types of treats will you be offering?",
+              "decorations_title": "What special features will your home have?",
+              "scary_level_title": "How scary is your setup?",
+              "home_address_state": "Test State",
+              "home_address_title": "Street Address",
+              "participation_time": [
+                "5:00 PM - 6:00 PM",
+                "8:00 PM - 9:00 PM"
+              ],
+              "accessibility_title": "Accessibility features at your home",
+              "home_address_street": "123 Test St",
+              "home_address_suburb": "Test Suburb",
+              "participating_title": "Will you be participating in trick-or-treat this Halloween?",
+              "special_notes_title": "Any special notes or instructions?",
+              "volunteer_interests": [],
+              "home_address_country": "Australia",
+              "map_permission_title": "Can we include your address on the public trick-or-treat map?",
+              "allergy_details_title": "What allergy-friendly options are you providing?",
+              "home_address_latitude": null,
+              "home_address_postcode": null,
+              "allergy_friendly_title": "Are you offering allergy-friendly or food-free options?",
+              "decoration_photo_title": "Upload a photo of your decorations (optional)",
+              "home_address_longitude": null,
+              "home_address_subpremise": null,
+              "home_address_state_title": "Street Address - State",
+              "participation_time_title": "What time will you be handing out treats?",
+              "home_address_streetNumber": null,
+              "home_address_street_title": "Street Address - Street",
+              "home_address_suburb_title": "Street Address - City/Suburb",
+              "volunteer_interests_title": "What would you be interested in helping with?",
+              "home_address_country_title": "Street Address - Country",
+              "home_address_latitude_title": "Street Address - Latitude",
+              "home_address_postcode_title": "Street Address - Zip/Post Code",
+              "home_address_longitude_title": "Street Address - Longitude",
+              "home_address_subpremise_title": "Street Address - Apartment/Unit",
+              "home_address_streetNumber_title": "Street Address - Street Number"
+            },
+            "descriptions": [
+              {
+                "key": "first_name",
+                "label": "First Name",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "last_name",
+                "label": "Last Name",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "email",
+                "label": "Email Address",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "phone",
+                "label": "Phone Number",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address",
+                "label": "Street Address",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_subpremise",
+                "label": "Street Address - Apartment/Unit",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_streetNumber",
+                "label": "Street Address - Street Number",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_street",
+                "label": "Street Address - Street",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_suburb",
+                "label": "Street Address - City/Suburb",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_state",
+                "label": "Street Address - State",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_postcode",
+                "label": "Street Address - Zip/Post Code",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_country",
+                "label": "Street Address - Country",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_latitude",
+                "label": "Street Address - Latitude",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "home_address_longitude",
+                "label": "Street Address - Longitude",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "participating",
+                "label": "Will you be participating in trick-or-treat this Halloween?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "participation_time",
+                "label": "What time will you be handing out treats?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "candy_types",
+                "label": "What types of treats will you be offering?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "allergy_friendly",
+                "label": "Are you offering allergy-friendly or food-free options?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "allergy_details",
+                "label": "What allergy-friendly options are you providing?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "48c0u",
+                "label": "Hours of Operation",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "decorations",
+                "label": "What special features will your home have?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "scary_level",
+                "label": "How scary is your setup?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "decoration_photo__name",
+                "label": "Upload a photo of your decorations (optional) - File Name",
+                "helpText": "Name of uploaded file",
+                "example": null
+              },
+              {
+                "key": "decoration_photo__url",
+                "label": "Upload a photo of your decorations (optional) - URL",
+                "helpText": "URL of uploaded file",
+                "example": null
+              },
+              {
+                "key": "decoration_photo__type",
+                "label": "Upload a photo of your decorations (optional) - Type",
+                "helpText": "Type of uploaded file",
+                "example": null
+              },
+              {
+                "key": "decoration_photo__width",
+                "label": "Upload a photo of your decorations (optional) - Width",
+                "helpText": "Width of uploaded file (if image)",
+                "example": null
+              },
+              {
+                "key": "decoration_photo__height",
+                "label": "Upload a photo of your decorations (optional) - Height",
+                "helpText": "Height of uploaded file (if image)",
+                "example": null
+              },
+              {
+                "key": "accessibility",
+                "label": "Accessibility features at your home",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "special_notes",
+                "label": "Any special notes or instructions?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "map_permission",
+                "label": "Can we include your address on the public trick-or-treat map?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "volunteer",
+                "label": "Would you like to volunteer to help coordinate Halloween activities?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "volunteer_interests",
+                "label": "What would you be interested in helping with?",
+                "helpText": "Answer to questions",
+                "example": null
+              },
+              {
+                "key": "first_name_title",
+                "label": "First Name - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "last_name_title",
+                "label": "Last Name - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "email_title",
+                "label": "Email Address - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "phone_title",
+                "label": "Phone Number - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_title",
+                "label": "Street Address - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_subpremise_title",
+                "label": "Street Address - Apartment/Unit - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_streetNumber_title",
+                "label": "Street Address - Street Number - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_street_title",
+                "label": "Street Address - Street - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_suburb_title",
+                "label": "Street Address - City/Suburb - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_state_title",
+                "label": "Street Address - State - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_postcode_title",
+                "label": "Street Address - Zip/Post Code - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_country_title",
+                "label": "Street Address - Country - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_latitude_title",
+                "label": "Street Address - Latitude - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "home_address_longitude_title",
+                "label": "Street Address - Longitude - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "participating_title",
+                "label": "Will you be participating in trick-or-treat this Halloween? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "participation_time_title",
+                "label": "What time will you be handing out treats? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "candy_types_title",
+                "label": "What types of treats will you be offering? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "allergy_friendly_title",
+                "label": "Are you offering allergy-friendly or food-free options? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "allergy_details_title",
+                "label": "What allergy-friendly options are you providing? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "48c0u_title",
+                "label": "Hours of Operation - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "decorations_title",
+                "label": "What special features will your home have? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "scary_level_title",
+                "label": "How scary is your setup? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "decoration_photo_title",
+                "label": "Upload a photo of your decorations (optional) - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "accessibility_title",
+                "label": "Accessibility features at your home - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "special_notes_title",
+                "label": "Any special notes or instructions? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "map_permission_title",
+                "label": "Can we include your address on the public trick-or-treat map? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "volunteer_title",
+                "label": "Would you like to volunteer to help coordinate Halloween activities? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "volunteer_interests_title",
+                "label": "What would you be interested in helping with? - Title",
+                "helpText": "Title of question",
+                "example": null
+              },
+              {
+                "key": "id",
+                "label": "ID",
+                "helpText": "A unique identifier for the submission",
+                "example": null
+              },
+              {
+                "key": "ip_address",
+                "label": "IP Address",
+                "helpText": "IP Address of submission",
+                "example": null
+              },
+              {
+                "key": "created_at",
+                "label": "Time submitted",
+                "helpText": "Time submitted in account setting timezone",
+                "example": null
+              },
+              {
+                "key": "created_at_utc",
+                "label": "Time submitted UTC",
+                "helpText": "Time submitted in UTC",
+                "example": null
+              }
+            ],
+            "source": "polled"
+          },
+          "connection_id": "*-4e57a983aa52",
+          "parameters": [
+            {
+              "key": "formId",
+              "value": {
+                "value": {
+                  "label": "🎃 Halloween Trick-or-Treat Registration",
+                  "id": "6a5432f4f46ae5a87a0fb33c",
+                  "refs": [],
+                  "isCustom": null
+                },
+                "type": "option",
+                "refs": []
+              },
+              "label": "Choose a form",
+              "type": "dropdown"
+            }
+          ]
+        }
+      }
+    ],
+    "rules": []
+  },
+  "name": "My Workflow",
+  "__metadata": {
+    "srcWorkflowId": "e580cfee-af19-4c1f-bfd2-dc98a606602e",
+    "srcWorkflowVersionId": "12326",
+    "validationIssues": {
+      "ok": true,
+      "message": "Workflow version is valid",
+      "v": 4,
+      "issues": [],
+      "schema_version": "v1"
+    }
+  }
+}
