@@ -1,15 +1,8 @@
-// Runs inside the GitHub Action. Reads the submitted fields from environment
-// variables (set from the repository_dispatch client_payload), geocodes the
-// address with OpenStreetMap's free Nominatim service, and appends the new
-// pin to data/locations.json.
-//
-// The Stepper HTTP Request step's JSON body editor can only build flat
-// string values per row — it can't produce a genuine nested object for
-// client_payload, and hand-typing JSON syntax around free-text fields
-// (like the description) is fragile, since any stray quote character in
-// someone's submission would corrupt the JSON. So instead, Stepper sends
-// client_payload as ONE plain string with fields joined by "###", in a
-// fixed order: name###address###hours###treats###allergens###description
+// Runs inside the GitHub Action. Reads the submitted fields from
+// client_payload (a real nested object — sent by a Stepper "Code" step
+// using fetch() + JSON.stringify(), not the flat HTTP Request body editor),
+// geocodes the address with OpenStreetMap's free Nominatim service, and
+// appends the new pin to data/locations.json.
 
 const fs = require('fs');
 const path = require('path');
@@ -17,34 +10,15 @@ const https = require('https');
 
 const DATA_PATH = path.join(__dirname, '..', 'data', 'locations.json');
 
-const FIELD_ORDER = ['name', 'address', 'hours', 'treats', 'allergens', 'description'];
-const DELIMITER = '###';
+const name = process.env.LOCATION_NAME || 'A neighbor';
+const address = process.env.LOCATION_ADDRESS;
+const hours = process.env.LOCATION_HOURS || '';
+const treats = process.env.LOCATION_TREATS || '';
+const allergensRaw = process.env.LOCATION_ALLERGENS || '';
+const description = process.env.LOCATION_DESCRIPTION || '';
 
-const rawPayload = process.env.LOCATION_PAYLOAD || '';
-const parts = rawPayload.split(DELIMITER).map((s) => s.trim());
-
-const fields = {};
-FIELD_ORDER.forEach((key, i) => {
-  fields[key] = parts[i] || '';
-});
-
-const { name: rawName, address, hours, treats: rawTreats, allergens: allergensRaw, description } = fields;
-const name = rawName || 'A neighbor';
-
-// Treats and allergens may come through as a plain comma-joined string
-// (the common default when a platform stringifies a multi-select array),
-// or already as clean text — either way, tidy it into one comma-separated line.
-function tidyCommaList(value) {
-  return value
-    .split(/[,;]/)
-    .map((s) => s.trim())
-    .filter(Boolean)
-    .join(', ');
-}
-
-const treats = rawTreats ? tidyCommaList(rawTreats) : '';
-
-// Allergens display as individual badges, so keep this one as an array.
+// Allergens display as individual badges — split on comma/semicolon
+// regardless of whether the source was a single code or several joined.
 const allergens = allergensRaw
   .split(/[,;]/)
   .map((s) => s.trim())
@@ -56,7 +30,6 @@ const VIEWBOX = '151.15,-33.15,151.50,-33.65';
 
 if (!address) {
   console.error('No address was provided in the dispatch payload. Aborting.');
-  console.error('Raw payload received:', JSON.stringify(rawPayload));
   process.exit(1);
 }
 
@@ -73,8 +46,6 @@ function geocode(query) {
     hostname: 'nominatim.openstreetmap.org',
     path: `/search?${params.toString()}`,
     headers: {
-      // Nominatim's usage policy requires a real identifying User-Agent.
-      // Replace the email below with a real contact address.
       'User-Agent': 'trick-or-treat-map (community project; contact: you@example.com)',
     },
   };
@@ -117,7 +88,6 @@ async function main() {
     treats,
     allergens,
     description,
-    photo: '',
     lat: parseFloat(lat),
     lng: parseFloat(lon),
     submittedAt: new Date().toISOString(),
