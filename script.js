@@ -46,8 +46,8 @@ function funifyStyle(baseStyle) {
   // Simplified to two tiers instead of one color per road class — the
   // whole point is a calmer, less "detailed" road network, with the
   // neon landmarks doing the visual work instead.
-  const MAJOR_ROAD = { casing: '#C7C7CC', fill: '#F4F4F6' };
-  const MINOR_ROAD = { casing: '#E3E3E7', fill: '#FBFBFC' };
+  const MAJOR_ROAD = { casing: '#6A6F79', fill: '#6A6F79' };
+  const MINOR_ROAD = { casing: '#4D515A', fill: '#4D515A' };
   const ROAD_COLORS = {
     motorway: MAJOR_ROAD,
     trunk: MAJOR_ROAD,
