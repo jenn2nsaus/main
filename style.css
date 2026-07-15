@@ -322,13 +322,19 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(8, 8, 14, 0.6);
   cursor: pointer;
   transition: transform 0.15s ease;
 }
 
 .pumpkin-icon-marker {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
+  stroke-width: 7;
+  filter: drop-shadow(0 0 2px var(--pumpkin-glow)) drop-shadow(0 0 5px var(--pumpkin-glow));
 }
 
 .pumpkin-marker:hover {
