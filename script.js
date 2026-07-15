@@ -29,6 +29,9 @@ function funifyStyle(baseStyle) {
     park: '#26163a',
     landcover_wood: '#26163a',
     landcover_grass: '#26163a',
+    landcover_wetland: '#26163a',
+    landcover_mangrove: '#26163a',
+    landcover_swamp: '#26163a',
     landuse_pitch: '#26163a',
     landuse_track: '#26163a',
     landcover_sand: '#26163a',
@@ -82,7 +85,11 @@ function funifyStyle(baseStyle) {
     }
 
     if (layer.type === 'fill' && layer.id in EXACT_FILL_COLORS) {
-      return { ...layer, paint: { ...layer.paint, 'fill-color': EXACT_FILL_COLORS[layer.id] } };
+      // Some layers (like wetland) use a repeating icon fill-pattern instead
+      // of a flat color, which silently overrides fill-color if left in place.
+      const newPaint = { ...layer.paint, 'fill-color': EXACT_FILL_COLORS[layer.id] };
+      delete newPaint['fill-pattern'];
+      return { ...layer, paint: newPaint };
     }
 
     if (layer.type === 'line' && layer.id in LINE_COLORS) {
