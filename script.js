@@ -8,6 +8,21 @@ const PENINSULA_BOUNDS = [
 
 const BASE_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty';
 
+// Same outlined jack-o-lantern used in the header, reused for every map pin.
+const PUMPKIN_ICON_SVG = `
+  <svg class="pumpkin-icon pumpkin-icon-marker" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M46,12 Q44,4 50,3 Q56,4 54,12 L53,20 L47,20 Z" />
+    <ellipse cx="50" cy="58" rx="40" ry="32" />
+    <path d="M22,32 Q17,58 24,84" />
+    <path d="M36,28 Q32,58 37,88" />
+    <path d="M64,28 Q68,58 63,88" />
+    <path d="M78,32 Q83,58 76,84" />
+    <path d="M28,48 L40,48 L32,60 Z" />
+    <path d="M72,48 L60,48 L68,60 Z" />
+    <path d="M26,70 L34,78 L42,70 L50,78 L58,70 L66,78 L74,70" />
+  </svg>
+`;
+
 // Turns the realistic "road atlas" OpenFreeMap/Liberty style into something
 // bright, pastel, and uncluttered: hides icon/label layers that aren't useful
 // for a neighborhood route (shops, airports, borders, house numbers), and
@@ -101,9 +116,9 @@ function funifyStyle(baseStyle) {
         ...layer,
         paint: {
           ...layer.paint,
-          'text-color': '#6fb8e0',
-          'text-halo-color': 'rgba(10, 10, 16, 0.85)',
-          'text-halo-width': 1.2,
+          'text-color': '#9fd6f5',
+          'text-halo-color': 'rgba(6, 6, 12, 0.95)',
+          'text-halo-width': 2,
         },
       };
     }
@@ -196,7 +211,7 @@ function renderLocations(map, locations) {
 
     const el = document.createElement('div');
     el.className = 'pumpkin-marker';
-    el.textContent = '🎃';
+    el.innerHTML = PUMPKIN_ICON_SVG;
 
     const name = escapeHtml(loc.name || 'A neighbor');
     const address = escapeHtml(loc.address || '');
