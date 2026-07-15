@@ -266,9 +266,62 @@ function renderLocations(map, locations) {
       return;
     }
 
-    const el = document.createElement('div');
-    el.className = 'pumpkin-marker';
-    el.textContent = '🎃';
+ const el = document.createElement('div');
+el.className = 'pumpkin-marker';
+
+el.innerHTML = `
+<svg viewBox="0 0 100 100" class="pumpkin-svg">
+  <defs>
+    <filter id="pumpkinGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#pumpkinGlow)">
+    <path
+      d="M50 20
+         C25 20 15 40 15 58
+         C15 78 30 90 50 90
+         C70 90 85 78 85 58
+         C85 40 75 20 50 20Z"
+      fill="#ff8a00"
+      stroke="#ffb347"
+      stroke-width="3"
+    />
+
+    <rect
+      x="46"
+      y="8"
+      width="8"
+      height="16"
+      rx="2"
+      fill="#59d957"
+    />
+
+    <polygon points="35,45 43,55 27,55"
+      fill="#0b0d14"/>
+
+    <polygon points="65,45 73,55 57,55"
+      fill="#0b0d14"/>
+
+    <polygon points="50,60 44,68 56,68"
+      fill="#0b0d14"/>
+
+    <path
+      d="M35 73
+         Q50 83 65 73"
+      stroke="#0b0d14"
+      stroke-width="5"
+      fill="none"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>
+`;
 
     const popup = new maplibregl.Popup({
       offset: 20,
