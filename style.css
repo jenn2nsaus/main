@@ -74,11 +74,10 @@ body {
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 4px var(--pumpkin-glow)) drop-shadow(0 0 10px var(--pumpkin-glow));
 }
 
 .pumpkin-icon-header {
-  height: 100px;
+  height: 48px;
   width: auto;
   flex-shrink: 0;
 }
@@ -339,10 +338,8 @@ main {
 }
 
 .pumpkin-icon-marker {
-  width: 30px;
   height: 30px;
-  stroke-width: 7;
-  filter: drop-shadow(0 0 2px var(--pumpkin-glow)) drop-shadow(0 0 5px var(--pumpkin-glow));
+  width: auto;
 }
 
 .pumpkin-marker:hover {

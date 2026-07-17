@@ -8,16 +8,8 @@ const PENINSULA_BOUNDS = [
 
 const BASE_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty';
 
-// Same outlined jack-o-lantern used in the header, reused for every map pin.
-const PUMPKIN_ICON_SVG = `
-  <svg class="pumpkin-icon pumpkin-icon-marker" viewBox="0 0 100 100" aria-hidden="true">
-    <path d="M46,12 Q44,4 50,3 Q56,4 54,12 L53,20 L47,20 Z" />
-    <ellipse cx="50" cy="58" rx="40" ry="32" />
-    <path d="M28,48 L40,48 L32,60 Z" />
-    <path d="M72,48 L60,48 L68,60 Z" />
-    <path d="M26,70 L34,78 L42,70 L50,78 L58,70 L66,78 L74,70" />
-  </svg>
-`;
+// Same Jackolantern.png used in the header, reused for every map pin.
+const PUMPKIN_ICON_MARKUP = `<img src="Jackolantern.png" alt="" class="pumpkin-icon pumpkin-icon-marker" />`;
 
 // Turns the realistic "road atlas" OpenFreeMap/Liberty style into something
 // bright, pastel, and uncluttered: hides icon/label layers that aren't useful
@@ -207,7 +199,7 @@ function renderLocations(map, locations) {
 
     const el = document.createElement('div');
     el.className = 'pumpkin-marker';
-    el.innerHTML = PUMPKIN_ICON_SVG;
+    el.innerHTML = PUMPKIN_ICON_MARKUP;
 
     const name = escapeHtml(loc.name || 'A neighbor');
     const address = escapeHtml(loc.address || '');
