@@ -8,9 +8,6 @@ const PENINSULA_BOUNDS = [
 
 const BASE_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty';
 
-// Same Jackolantern.png used in the header, reused for every map pin.
-const PUMPKIN_ICON_MARKUP = `<img src="Jackolantern.png" alt="" class="pumpkin-icon pumpkin-icon-marker" />`;
-
 // Turns the realistic "road atlas" OpenFreeMap/Liberty style into something
 // bright, pastel, and uncluttered: hides icon/label layers that aren't useful
 // for a neighborhood route (shops, airports, borders, house numbers), and
@@ -104,9 +101,9 @@ function funifyStyle(baseStyle) {
         ...layer,
         paint: {
           ...layer.paint,
-          'text-color': '#9fd6f5',
-          'text-halo-color': 'rgba(6, 6, 12, 0.95)',
-          'text-halo-width': 2,
+          'text-color': '#bfe6fa',
+          'text-halo-color': 'rgba(6, 6, 12, 0.9)',
+          'text-halo-width': 1.2,
         },
       };
     }
@@ -199,7 +196,7 @@ function renderLocations(map, locations) {
 
     const el = document.createElement('div');
     el.className = 'pumpkin-marker';
-    el.innerHTML = PUMPKIN_ICON_MARKUP;
+    el.textContent = '🎃';
 
     const name = escapeHtml(loc.name || 'A neighbor');
     const address = escapeHtml(loc.address || '');
